@@ -1,0 +1,14 @@
+#!/bin/bash
+version=`zsh --version`
+if [ "$version" = "" ]; then
+	echo "zsh not installed"
+else 
+	echo "zsh installed - $version"
+	exit 
+fi
+
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+cp .zshrc_default .zshrc
+mv .zshrc ../.zshrc
+
